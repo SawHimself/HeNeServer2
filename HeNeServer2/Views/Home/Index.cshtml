@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome <img src="elements/HeNe.png" width="150" /> </h1>
+    <h6>За технической поддержкой обращайтесь на <a href="https://vk.com/da_che_vy_nachinaete">VK</a>.</h6>
+</div>
+<div class="text-body">
+    <h2>Выберите файл для загрузки</h2>
+    <form action="home/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="uploads" /><br>
+        <input type="submit" value="Загрузить" />
+    </form>
+</div>

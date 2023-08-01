@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Фотографии из каталога";
+}
+
+<h1>Фотографии из каталога</h1>
+<div id="gallery">
+    @foreach (string fileName in ViewBag.ImageFiles)
+    {
+        <img src="~/images/@fileName" alt="@fileName" width="200" height="150" />
+    }
+</div>
