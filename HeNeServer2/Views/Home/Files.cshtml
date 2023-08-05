@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Загруженные файлы";
+}
+
+<h1>Загруженные файлы</h1>
+<div id="list">
+    @foreach (string fileName in ViewBag.ImageFiles)
+    {
+            <a href="~/files/@fileName" download>
+                <img src="~/elements/FileIcon.png" alt="@fileName" width="70" height="70" alt="@fileName" title="@fileName"/>
+            </a>
+            <figcaption>@fileName.Remove(9)</figcaption>
+    }
+</div>
