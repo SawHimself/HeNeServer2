@@ -2,13 +2,27 @@
     ViewData["Title"] = "Загруженные файлы";
 }
 
+<style>
+    .list {
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* Дополнительный стиль для элементов внутри контейнера .list */
+    .list > div {
+        margin-right: 15px;
+    }
+</style>
+
 <h1>Загруженные файлы</h1>
-<div id="list">
+<div class="list">
     @foreach (string fileName in ViewBag.ImageFiles)
     {
+        <div id="UploadFile">
             <a href="~/files/@fileName" download>
-                <img src="~/elements/FileIcon.png" alt="@fileName" width="70" height="70" alt="@fileName" title="@fileName"/>
+                <img src="~/elements/FileIcon.png" alt="@fileName" width="70" height="70" title="@fileName"/>
             </a>
             <figcaption>@fileName.Remove(9)</figcaption>
+        </div>
     }
 </div>

@@ -2,6 +2,48 @@
     ViewData["Title"] = "Home Page";
 }
 
+<style>
+    .display-4 {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+
+    .file-label {
+        display: flex;
+        padding: 30px 30px;
+        background-color: #d5a4f6;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 30px;
+        margin: 10px;
+    }
+
+    .file-label:hover {
+        background-color: #ad8fc1;
+    }
+
+    .rounded-button {
+        display: flex;
+        padding: 30px 30px;
+        background-color: #e8ddef;
+        color: white;
+        border: none;
+        border-radius: 50px; /* Устанавливаем радиус для создания круглой формы */
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin: 10px;
+    }
+    .rounded-button:hover {
+            background-color: #ad8fc1;
+    }
+</style>
+
 <div class="text-center">
     <h1 class="display-4">Welcome <img src="elements/HeNe.png" width="150" /> </h1>
     <h6>За технической поддержкой обращайтесь на <a href="https://vk.com/da_che_vy_nachinaete">VK</a>.</h6>
@@ -9,7 +51,8 @@
 <div class="text-body">
     <h2>Выберите файл для загрузки</h2>
     <form action="home/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="uploads" multiple/><br>
-        <input type="submit" value="Загрузить" />
+        <label for="file-input" class="file-label"></label>
+        <input type="file" id="file-input" name="uploads" multiple style="display: none;" />
+        <button type="submit" class="rounded-button"></button>
     </form>
 </div>

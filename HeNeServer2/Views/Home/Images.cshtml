@@ -1,11 +1,23 @@
 ﻿@{
     ViewData["Title"] = "Загруженные фотографии";
 }
+<style>
+    .gallery {
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* Дополнительный стиль для элементов внутри контейнера .list */
+    .gallery > img {
+        margin-top: 15px;
+        margin-right: 15px;
+    }
+</style>
 
 <h1>Загруженные фотографии</h1>
-<div id="gallery">
+<div class="gallery">
     @foreach (string fileName in ViewBag.ImageFiles)
     {
-        <img src="~/images/@fileName" alt="@fileName" width="200" height="150" />
+        <img src="~/images/@fileName" alt="@fileName" height="150" />
     }
 </div>
